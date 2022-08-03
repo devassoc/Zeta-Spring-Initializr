@@ -1,0 +1,9 @@
+@Library("bankingdevops@master") _
+
+bankingJenkinsJob(
+mavenCommand: 'mvn clean package -DskipTests',
+shouldRunSonarAnalysis: 'true',
+shouldRunSonarGate: 'false',
+multiTenantResourcesDirectoryPath: 'application/src/multiTenantResources',
+openAPIPomPath: 'application'
+)

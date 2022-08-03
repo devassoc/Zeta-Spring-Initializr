@@ -1,0 +1,3 @@
+io.spring.initializr.generator.project.ProjectGenerationConfiguration=\
+in.zeta.aether.spring.initializr.contributor.DockerProjectGenerationConfiguration,\
+in.zeta.aether.spring.initializr.contributor.ControllerProjectGenerationConfiguration
