@@ -22,8 +22,8 @@
 	</properties>
 
 	<modules>
-		<module>simple-generator</module>
-		<module>simple-service</module>
+		<module>aether-spring-app</module>
+		<module>aether-spring-generator</module>
 	</modules>
 
 	<dependencyManagement>
