@@ -3,4 +3,5 @@ in.zeta.aether.spring.initializr.contributor.DockerProjectGenerationConfiguratio
 in.zeta.aether.spring.initializr.contributor.ControllerProjectGenerationConfiguration,\
 in.zeta.aether.spring.initializr.contributor.ServiceProjectGenerationConfiguration,\
 in.zeta.aether.spring.initializr.contributor.RepositoryProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.MainClassProjectGenerationConfiguration
+in.zeta.aether.spring.initializr.contributor.MainClassProjectGenerationConfiguration,\
+in.zeta.aether.spring.initializr.contributor.ZetaBuildProjectGenerationConfiguration

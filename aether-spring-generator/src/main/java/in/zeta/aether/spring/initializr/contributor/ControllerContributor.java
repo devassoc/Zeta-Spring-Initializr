@@ -10,6 +10,7 @@ import io.spring.initializr.generator.language.TypeDeclaration;
 import io.spring.initializr.generator.language.java.JavaExpressionStatement;
 import io.spring.initializr.generator.language.java.JavaMethodDeclaration;
 import io.spring.initializr.generator.language.java.JavaMethodInvocation;
+import io.spring.initializr.generator.language.java.JavaReturnStatement;
 import io.spring.initializr.generator.language.java.JavaStatement;
 import io.spring.initializr.generator.language.java.JavaTypeDeclaration;
 import io.spring.initializr.generator.project.ProjectDescription;
@@ -65,9 +66,12 @@ public class ControllerContributor<T extends TypeDeclaration, C extends Compilat
     restController.annotate(requestMappingAnnotation);
 
 
-    JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("getApi").modifiers(Modifier.PUBLIC).returning("Integer")
-        .parameters(new Parameter("java.lang.Integer", "id"))
-        .body(new JavaStatement());
+    JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("getName").modifiers(Modifier.PUBLIC).returning("String")
+        .parameters(new Parameter("java.lang.String", "name"))
+        .body(
+            new JavaReturnStatement(new JavaMethodInvocation("name", "trim"))
+        );
+
     Annotation getMappingAnnotation = Annotation.name("org.springframework.web.bind.annotation.GetMapping");
     getApiMethod.annotate(getMappingAnnotation);
     getApiMethod.annotate(Annotation.name("org.springframework.web.bind.annotation.CrossOrigin"));

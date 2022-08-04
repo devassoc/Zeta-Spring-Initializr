@@ -7,6 +7,8 @@ import io.spring.initializr.generator.language.SourceCode;
 import io.spring.initializr.generator.language.SourceCodeWriter;
 import io.spring.initializr.generator.language.TypeDeclaration;
 import io.spring.initializr.generator.language.java.JavaMethodDeclaration;
+import io.spring.initializr.generator.language.java.JavaMethodInvocation;
+import io.spring.initializr.generator.language.java.JavaReturnStatement;
 import io.spring.initializr.generator.language.java.JavaStatement;
 import io.spring.initializr.generator.language.java.JavaTypeDeclaration;
 import io.spring.initializr.generator.project.ProjectDescription;
@@ -52,11 +54,13 @@ public class RepositoryContributor<T extends TypeDeclaration, C extends Compilat
   void createRepository(T javaTypeDeclaration) {
     JavaTypeDeclaration restController = (JavaTypeDeclaration) javaTypeDeclaration;
     restController.modifiers(Modifier.PUBLIC);
-    restController.annotate(Annotation.name("org.springframework.web.bind.annotation.Repository"));
+    restController.annotate(Annotation.name("org.springframework.stereotype.Repository"));
 
-    JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("findById").modifiers(Modifier.PUBLIC).returning("Integer")
-        .parameters(new Parameter("java.lang.Integer", "id"))
-        .body(new JavaStatement());
+    JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("findByName").modifiers(Modifier.PUBLIC).returning("String")
+        .parameters(new Parameter("java.lang.String", "name"))
+        .body(
+            new JavaReturnStatement(new JavaMethodInvocation("name", "trim"))
+        );
 
     restController.addMethodDeclaration(
         getApiMethod

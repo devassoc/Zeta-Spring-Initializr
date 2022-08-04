@@ -6,7 +6,10 @@ import io.spring.initializr.generator.language.Parameter;
 import io.spring.initializr.generator.language.SourceCode;
 import io.spring.initializr.generator.language.SourceCodeWriter;
 import io.spring.initializr.generator.language.TypeDeclaration;
+import io.spring.initializr.generator.language.java.JavaExpressionStatement;
 import io.spring.initializr.generator.language.java.JavaMethodDeclaration;
+import io.spring.initializr.generator.language.java.JavaMethodInvocation;
+import io.spring.initializr.generator.language.java.JavaReturnStatement;
 import io.spring.initializr.generator.language.java.JavaStatement;
 import io.spring.initializr.generator.language.java.JavaTypeDeclaration;
 import io.spring.initializr.generator.project.ProjectDescription;
@@ -52,11 +55,13 @@ public class ServiceContributor<T extends TypeDeclaration, C extends Compilation
   void createService(T javaTypeDeclaration) {
     JavaTypeDeclaration restController = (JavaTypeDeclaration) javaTypeDeclaration;
     restController.modifiers(Modifier.PUBLIC);
-    restController.annotate(Annotation.name("org.springframework.web.bind.annotation.Service"));
+    restController.annotate(Annotation.name("org.springframework.stereotype.Service"));
 
-    JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("getDataById").modifiers(Modifier.PUBLIC).returning("Integer")
-        .parameters(new Parameter("java.lang.Integer", "id"))
-        .body(new JavaStatement());
+    JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("getByName").modifiers(Modifier.PUBLIC).returning("String")
+        .parameters(new Parameter("java.lang.String", "name"))
+        .body(
+            new JavaReturnStatement(new JavaMethodInvocation("name", "trim"))
+        );
 
     restController.addMethodDeclaration(
         getApiMethod
