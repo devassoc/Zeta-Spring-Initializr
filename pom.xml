@@ -24,6 +24,7 @@
 	<modules>
 		<module>aether-spring-app</module>
 		<module>aether-spring-generator</module>
+		<module>aether-spring-initializr-ui</module>
 	</modules>
 
 	<dependencyManagement>
@@ -40,6 +41,15 @@
 				<scope>import</scope>
 				<version>${spring-initializr.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>io.spring.start</groupId>
+				<artifactId>start-client</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+
+
 		</dependencies>
 	</dependencyManagement>
 

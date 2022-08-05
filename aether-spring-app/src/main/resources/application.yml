@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 
 initializr:
   group-id:
@@ -12,14 +12,22 @@ initializr:
         - name: Web
           id: web
           description: Build web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
-    - name: Tech
+    - name: Zeta-Delta
       content:
-        - name: Hiren
-          id: hiren
-          groupId: com.hiren.test
-          artifactId: hire
-          version: 1.2.0.RELEASE
-          description: Hiren test Dependency
+        - name: Zeta-Delta
+          id: zeta-delta
+          groupId: in.zeta
+          artifactId: delta-library
+          version: 2.1.12
+          description: Zeta Delta Library
+    - name: Zeta-Crux
+      content:
+        - name: Zeta-Crux
+          id: zeta-crux
+          groupId: in.zeta
+          artifactId: crux
+          version: 2.3.4
+          description: Zeta Crux Library
   types:
     - name: Maven Project
       id: maven-project

@@ -25,6 +25,13 @@
 			<groupId>io.spring.initializr</groupId>
 			<artifactId>initializr-web</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>io.spring.start</groupId>
+			<artifactId>start-client</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 	</dependencies>
 
 </project>
