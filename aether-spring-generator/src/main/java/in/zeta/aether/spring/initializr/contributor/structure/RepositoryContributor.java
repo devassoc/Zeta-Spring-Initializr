@@ -1,4 +1,4 @@
-package in.zeta.aether.spring.initializr.contributor;
+package in.zeta.aether.spring.initializr.contributor.structure;
 
 import io.spring.initializr.generator.language.Annotation;
 import io.spring.initializr.generator.language.CompilationUnit;
@@ -37,7 +37,7 @@ public class RepositoryContributor<T extends TypeDeclaration, C extends Compilat
   public void contribute(Path projectRoot){
 
     S sourceCode = this.sourceFactory.get();
-    String className = "AetherRepository";
+    String className = projectDescription.getApplicationName().replaceAll("Application","") + "Repository";
     C compilationUnit = sourceCode.createCompilationUnit(this.projectDescription.getPackageName()+".repository", className);
     T mainApplicationType = compilationUnit.createTypeDeclaration(className);
 

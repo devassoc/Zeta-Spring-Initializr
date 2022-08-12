@@ -1,4 +1,4 @@
-package in.zeta.aether.spring.initializr.contributor;
+package in.zeta.aether.spring.initializr.contributor.customtemplate;
 
 import io.spring.initializr.generator.buildsystem.Build;
 import io.spring.initializr.generator.project.ProjectGenerationConfiguration;

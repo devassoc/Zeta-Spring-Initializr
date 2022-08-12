@@ -14,14 +14,11 @@
  * limitations under the License.
  */
 
-package in.zeta.aether.spring.initializr.contributor;
+package in.zeta.aether.spring.initializr.contributor.buildsystem;
 
-import io.spring.initializr.generator.buildsystem.maven.MavenBuild;
 import io.spring.initializr.generator.buildsystem.maven.MavenBuildSystem;
 import io.spring.initializr.generator.condition.ConditionalOnBuildSystem;
-import io.spring.initializr.generator.io.IndentingWriterFactory;
 import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
-import io.spring.initializr.generator.spring.build.maven.MavenBuildProjectContributor;
 import org.springframework.context.annotation.Bean;
 
 /**

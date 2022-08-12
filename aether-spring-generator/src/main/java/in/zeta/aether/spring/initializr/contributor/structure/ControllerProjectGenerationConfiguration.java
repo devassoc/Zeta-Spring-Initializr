@@ -1,4 +1,4 @@
-package in.zeta.aether.spring.initializr.contributor;
+package in.zeta.aether.spring.initializr.contributor.structure;
 
 import io.spring.initializr.generator.io.IndentingWriterFactory;
 import io.spring.initializr.generator.language.java.JavaCompilationUnit;

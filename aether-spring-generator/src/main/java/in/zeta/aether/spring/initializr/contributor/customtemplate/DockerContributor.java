@@ -1,13 +1,11 @@
-package in.zeta.aether.spring.initializr.contributor;
+package in.zeta.aether.spring.initializr.contributor.customtemplate;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
@@ -16,30 +14,25 @@ import io.spring.initializr.generator.project.contributor.ProjectContributor;
 public class DockerContributor implements ProjectContributor {
 
 	public void contribute(Path projectRoot){
-		//TODO: Remove this hard coding of file name
-		copyFile(
-				projectRoot,
-				"Dockerfile",
-				"/Users/hirenodedara/Projects/initializr/initializr-generator-spring/src/main/resources/Dockerfile"
-				);
 
 		copyFile(
 				projectRoot,
-				"entryPoint.sh",
-				"/Users/hirenodedara/Projects/initializr/initializr-generator-spring/src/main/resources/entryPoint.sh"
+				"Dockerfile",
+				"Dockerfile"
 				);
 
 		copyFile(
 				projectRoot,
 				"Jenkinsfile",
-				"/Users/hirenodedara/Projects/initializr/initializr-generator-spring/src/main/resources/Jenkinsfile"
+				"Jenkinsfile"
 				);
 
 	}
 
 	private void copyFile(Path projectRoot, String destFileName, String sourceFilePath){
 
-		File source = new File(sourceFilePath);
+		ClassLoader classLoader = getClass().getClassLoader();
+		File source = new File(classLoader.getResource(sourceFilePath).getFile());
 		File dest = null;
 
 		//Create a file

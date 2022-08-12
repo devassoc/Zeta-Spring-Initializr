@@ -14,21 +14,13 @@
  * limitations under the License.
  */
 
-package in.zeta.aether.spring.initializr.contributor;
+package in.zeta.aether.spring.initializr.contributor.buildsystem;
 
-import io.spring.initializr.generator.buildsystem.BillOfMaterials;
 import io.spring.initializr.generator.buildsystem.Dependency;
-import io.spring.initializr.generator.buildsystem.Dependency.Builder;
-import io.spring.initializr.generator.buildsystem.DependencyScope;
 import io.spring.initializr.generator.buildsystem.maven.MavenBuild;
-import io.spring.initializr.generator.project.ProjectDescription;
 import io.spring.initializr.generator.spring.build.BuildCustomizer;
-import io.spring.initializr.generator.version.VersionProperty;
 import io.spring.initializr.generator.version.VersionReference;
 import io.spring.initializr.metadata.InitializrConfiguration.Env.Maven;
-import io.spring.initializr.metadata.InitializrConfiguration.Env.Maven.ParentPom;
-import io.spring.initializr.metadata.InitializrMetadata;
-import io.spring.initializr.metadata.support.MetadataBuildItemMapper;
 
 /**
  * The default {@link Maven} {@link BuildCustomizer}.

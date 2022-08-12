@@ -28,9 +28,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-	@GetMapping(path = "/", produces = MediaType.TEXT_HTML_VALUE)
-	public String home() {
-		System.out.println("Wow Hiren");
+	@GetMapping(path = "/zeta-initializr-ui", produces = MediaType.TEXT_HTML_VALUE)
+	public String initializrUI() {
 		return "forward:index.html";
 	}
 
