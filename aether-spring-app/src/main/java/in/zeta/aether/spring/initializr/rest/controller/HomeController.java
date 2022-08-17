@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-	@GetMapping(path = "/zeta-initializr-ui", produces = MediaType.TEXT_HTML_VALUE)
+	@GetMapping(path = "/ui", produces = MediaType.TEXT_HTML_VALUE)
 	public String initializrUI() {
 		return "forward:index.html";
 	}
