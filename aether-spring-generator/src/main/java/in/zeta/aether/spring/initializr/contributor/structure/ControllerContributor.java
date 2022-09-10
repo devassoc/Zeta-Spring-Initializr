@@ -1,5 +1,11 @@
 package in.zeta.aether.spring.initializr.contributor.structure;
 
+import static in.zeta.aether.spring.initializr.constant.AppConstant.CROSS_ORIGIN_ANNOTATION;
+import static in.zeta.aether.spring.initializr.constant.AppConstant.GET_MAPPING_ANNOTATION;
+import static in.zeta.aether.spring.initializr.constant.AppConstant.REQUEST_MAPPING_ANNOTATION;
+import static in.zeta.aether.spring.initializr.constant.AppConstant.REST_CONTROLLER_ANNOTATION;
+import static in.zeta.aether.spring.initializr.constant.AppConstant.STRING_TYPE;
+
 import io.spring.initializr.generator.language.Annotation;
 import io.spring.initializr.generator.language.Annotation.Attribute;
 import io.spring.initializr.generator.language.CompilationUnit;
@@ -47,6 +53,7 @@ public class ControllerContributor<T extends TypeDeclaration, C extends Compilat
     T mainApplicationType = compilationUnit.createTypeDeclaration(className);
 
     createRestController(mainApplicationType);
+
     try {
       this.sourceWriter.writeTo(
           this.projectDescription.getBuildSystem().getMainSource(projectRoot, this.projectDescription.getLanguage()),
@@ -59,22 +66,22 @@ public class ControllerContributor<T extends TypeDeclaration, C extends Compilat
   void createRestController(T javaTypeDeclaration) {
     JavaTypeDeclaration restController = (JavaTypeDeclaration) javaTypeDeclaration;
     restController.modifiers(Modifier.PUBLIC);
-    restController.annotate(Annotation.name("org.springframework.web.bind.annotation.RestController"));
+    restController.annotate(Annotation.name(REST_CONTROLLER_ANNOTATION));
 
-    Annotation requestMappingAnnotation = Annotation.name("org.springframework.web.bind.annotation.RequestMapping", (builder) -> builder.attribute("value", String.class,
+    Annotation requestMappingAnnotation = Annotation.name(REQUEST_MAPPING_ANNOTATION, (builder) -> builder.attribute("value", String.class,
         "api/v1"));
     restController.annotate(requestMappingAnnotation);
 
 
     JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("getName").modifiers(Modifier.PUBLIC).returning("String")
-        .parameters(new Parameter("java.lang.String", "name"))
+        .parameters(new Parameter(STRING_TYPE, "name"))
         .body(
             new JavaReturnStatement(new JavaMethodInvocation("name", "trim"))
         );
 
-    Annotation getMappingAnnotation = Annotation.name("org.springframework.web.bind.annotation.GetMapping");
+    Annotation getMappingAnnotation = Annotation.name(GET_MAPPING_ANNOTATION);
     getApiMethod.annotate(getMappingAnnotation);
-    getApiMethod.annotate(Annotation.name("org.springframework.web.bind.annotation.CrossOrigin"));
+    getApiMethod.annotate(Annotation.name(CROSS_ORIGIN_ANNOTATION));
 
     restController.addMethodDeclaration(
         getApiMethod

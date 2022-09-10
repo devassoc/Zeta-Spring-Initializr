@@ -1,5 +1,8 @@
 package in.zeta.aether.spring.initializr.contributor.structure;
 
+import static in.zeta.aether.spring.initializr.constant.AppConstant.SERVICE_ANNOTATION;
+import static in.zeta.aether.spring.initializr.constant.AppConstant.STRING_TYPE;
+
 import io.spring.initializr.generator.language.Annotation;
 import io.spring.initializr.generator.language.CompilationUnit;
 import io.spring.initializr.generator.language.Parameter;
@@ -55,10 +58,10 @@ public class ServiceContributor<T extends TypeDeclaration, C extends Compilation
   void createService(T javaTypeDeclaration) {
     JavaTypeDeclaration restController = (JavaTypeDeclaration) javaTypeDeclaration;
     restController.modifiers(Modifier.PUBLIC);
-    restController.annotate(Annotation.name("org.springframework.stereotype.Service"));
+    restController.annotate(Annotation.name(SERVICE_ANNOTATION));
 
     JavaMethodDeclaration getApiMethod = JavaMethodDeclaration.method("getByName").modifiers(Modifier.PUBLIC).returning("String")
-        .parameters(new Parameter("java.lang.String", "name"))
+        .parameters(new Parameter(STRING_TYPE, "name"))
         .body(
             new JavaReturnStatement(new JavaMethodInvocation("name", "trim"))
         );

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Note: This file will only be used at local running time. in actual env it will be picked up from zeta-openjdk docker file-->
+
+<Configuration monitorInterval="30">
+    <Appenders>
+        <Console name="console">
+            <PatternLayout
+                    pattern="%highlight{%d{HH:mm:ss} %-5p %-25.25c{1} %-8.8t  %-8.8X{flowID} - %m%n}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="console"/>
+        </Root>
+        <Logger name="in.zeta" level="INFO"/>
+        <Logger name="olympus" level="INFO"/>
+        <Logger name="olympus.spartan.messaging.Router" level="INFO"/>
+    </Loggers>
+</Configuration>

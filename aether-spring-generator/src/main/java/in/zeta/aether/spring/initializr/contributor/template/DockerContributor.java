@@ -1,4 +1,4 @@
-package in.zeta.aether.spring.initializr.contributor.customtemplate;
+package in.zeta.aether.spring.initializr.contributor.template;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,6 +27,12 @@ public class DockerContributor implements ProjectContributor {
 				"Jenkinsfile"
 				);
 
+		copyFile(
+				projectRoot,
+				"log4Olympus2.xml",
+				"log4Olympus2.xml"
+		);
+
 	}
 
 	private void copyFile(Path projectRoot, String destFileName, String sourceFilePath){
@@ -35,7 +41,6 @@ public class DockerContributor implements ProjectContributor {
 		File source = new File(classLoader.getResource(sourceFilePath).getFile());
 		File dest = null;
 
-		//Create a file
 		try {
 			dest = Files.createFile(projectRoot.resolve(destFileName)).toFile();
 		} catch (IOException e) {
