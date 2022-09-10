@@ -4,4 +4,4 @@ in.zeta.aether.spring.initializr.contributor.structure.ControllerProjectGenerati
 in.zeta.aether.spring.initializr.contributor.structure.ServiceProjectGenerationConfiguration,\
 in.zeta.aether.spring.initializr.contributor.structure.RepositoryProjectGenerationConfiguration,\
 in.zeta.aether.spring.initializr.contributor.MainClassProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.buildSystem.ZetaBuildProjectGenerationConfiguration
+in.zeta.aether.spring.initializr.contributor.buildsystem.ZetaBuildProjectGenerationConfiguration
