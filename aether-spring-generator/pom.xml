@@ -17,6 +17,7 @@
 			<groupId>io.spring.initializr</groupId>
 			<artifactId>initializr-generator</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>io.spring.initializr</groupId>
 			<artifactId>initializr-generator-spring</artifactId>
