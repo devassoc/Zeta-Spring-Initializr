@@ -1,8 +1,8 @@
 io.spring.initializr.generator.project.ProjectGenerationConfiguration=\
-in.zeta.aether.spring.initializr.contributor.template.DockerProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.code.ControllerProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.code.ServiceProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.code.RepositoryProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.MainClassProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.buildsystem.ZetaBuildProjectGenerationConfiguration,\
-in.zeta.aether.spring.initializr.contributor.configuration.ZetaAppConfiguration
+in.zeta.spring.initializr.contributor.template.DockerProjectGenerationConfiguration,\
+in.zeta.spring.initializr.contributor.code.ControllerProjectGenerationConfiguration,\
+in.zeta.spring.initializr.contributor.code.ServiceProjectGenerationConfiguration,\
+in.zeta.spring.initializr.contributor.code.RepositoryProjectGenerationConfiguration,\
+in.zeta.spring.initializr.contributor.MainClassProjectGenerationConfiguration,\
+in.zeta.spring.initializr.contributor.buildsystem.ZetaBuildProjectGenerationConfiguration,\
+in.zeta.spring.initializr.contributor.configuration.ZetaAppConfiguration

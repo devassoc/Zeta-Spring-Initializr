@@ -8,7 +8,8 @@
     <relativePath></relativePath>
     <!-- lookup parent from repository -->
   </parent>
-  <groupId>in.zeta.aether.spring</groupId>
+
+  <groupId>in.zeta.spring</groupId>
   <artifactId>zeta-spring-initializr</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -29,19 +30,19 @@
     <dependencies>
 
       <dependency>
-        <groupId>in.zeta.aether.spring</groupId>
+        <groupId>in.zeta.spring</groupId>
         <artifactId>zeta-spring-initializr-app</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
-        <groupId>in.zeta.aether.spring</groupId>
+        <groupId>in.zeta.spring</groupId>
         <artifactId>zeta-spring-initializr-generator</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
-        <groupId>in.zeta.aether.spring</groupId>
+        <groupId>in.zeta.spring</groupId>
         <artifactId>zeta-spring-initializr-ui</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
@@ -58,7 +59,7 @@
   </dependencyManagement>
 
   <build>
-    <finalName>aether-spring-intitializr</finalName>
+    <finalName>zeta-spring-intitializr</finalName>
     <plugins>
       <plugin>
         <groupId>com.diffplug.spotless</groupId>
