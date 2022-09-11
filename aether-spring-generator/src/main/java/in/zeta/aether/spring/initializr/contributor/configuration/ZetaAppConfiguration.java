@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 the original author or authors.
+ * Copyright 2012-2019 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-package in.zeta.aether.spring.initializr.rest.controller;
+package in.zeta.aether.spring.initializr.contributor.configuration;
 
-import org.springframework.http.MediaType;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
+import org.springframework.context.annotation.Bean;
 
 /**
- * Main Controller.
+ * Configuration for application-related contributions to a generated project.
  *
- * @author Brian Clozel
+ * @author Stephane Nicoll
  */
-@Controller
-public class HomeController {
+@ProjectGenerationConfiguration
+public class ZetaAppConfiguration {
 
-  @GetMapping(path = "/ui", produces = MediaType.TEXT_HTML_VALUE)
-  public String initializrUI() {
-    return "forward:index.html";
+  @Bean
+  public ZetaApplicationPropertiesContributor zetaApplicationPropertiesContributor() {
+    return new ZetaApplicationPropertiesContributor();
   }
 }

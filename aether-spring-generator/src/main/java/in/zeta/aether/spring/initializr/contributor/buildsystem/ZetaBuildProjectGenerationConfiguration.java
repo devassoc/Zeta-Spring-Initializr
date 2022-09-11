@@ -15,10 +15,8 @@ import org.springframework.context.annotation.Bean;
 @ConditionalOnBuildSystem(MavenBuildSystem.ID)
 public class ZetaBuildProjectGenerationConfiguration {
 
-	@Bean
-	public ZetaMavenBuildCustomizer zetaMavenBuildCustomizer() {
-		return new ZetaMavenBuildCustomizer();
-	}
-
-
+  @Bean
+  public ZetaMavenBuildCustomizer zetaMavenBuildCustomizer() {
+    return new ZetaMavenBuildCustomizer();
+  }
 }

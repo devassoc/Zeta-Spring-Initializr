@@ -193,6 +193,13 @@ initializr:
           artifactId: crux
           version: 2.3.4
           description: Zeta Crux Library
+        - name: spring-boot-commons
+          id: spring-boot-commons
+          groupId: in.zeta
+          artifactId: spring-boot-commons
+          version: 2.7.3
+          description: Zeta Spring Boot Commons Library
+          starter: true
     - name: Developer Tools
       content:
         - name: Spring Native [Experimental]

@@ -1,4 +1,4 @@
-package in.zeta.aether.spring.initializr.contributor.structure;
+package in.zeta.aether.spring.initializr.contributor.code;
 
 import io.spring.initializr.generator.io.IndentingWriterFactory;
 import io.spring.initializr.generator.language.java.JavaCompilationUnit;
@@ -10,24 +10,23 @@ import io.spring.initializr.generator.project.ProjectGenerationConfiguration;
 import org.springframework.context.annotation.Bean;
 
 @ProjectGenerationConfiguration
-public class ControllerProjectGenerationConfiguration {
+public class RepositoryProjectGenerationConfiguration {
 
   private final ProjectDescription description;
   private final IndentingWriterFactory indentingWriterFactory;
 
-  public ControllerProjectGenerationConfiguration(ProjectDescription description,
-      IndentingWriterFactory indentingWriterFactory) {
+  public RepositoryProjectGenerationConfiguration(
+      ProjectDescription description, IndentingWriterFactory indentingWriterFactory) {
     this.description = description;
     this.indentingWriterFactory = indentingWriterFactory;
   }
 
   @Bean
-  public ControllerContributor<JavaTypeDeclaration, JavaCompilationUnit, JavaSourceCode> controllerContributor() {
-    return new ControllerContributor(
+  public RepositoryContributor<JavaTypeDeclaration, JavaCompilationUnit, JavaSourceCode>
+      repositoryContributor() {
+    return new RepositoryContributor<>(
         this.description,
         JavaSourceCode::new,
-        new JavaSourceCodeWriter(this.indentingWriterFactory)
-    );
+        new JavaSourceCodeWriter(this.indentingWriterFactory));
   }
-
 }

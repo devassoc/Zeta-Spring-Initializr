@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>in.zeta.aether.spring</groupId>
-		<artifactId>spring-initializr</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
-	<artifactId>aether-spring-app</artifactId>
-	<name>Aether Spring Initializr API Service</name>
-	<description>Showcase a custom web endpoint</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>in.zeta.aether.spring</groupId>
+    <artifactId>spring-initializr</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>aether-spring-app</artifactId>
+  <name>Aether Spring Initializr API Service</name>
+  <description>Showcase a custom web endpoint</description>
 
-	<dependencies>
-		<dependency>
-			<groupId>in.zeta.aether.spring</groupId>
-			<artifactId>spring-generator</artifactId>
-		</dependency>
+  <dependencies>
+    <dependency>
+      <groupId>in.zeta.aether.spring</groupId>
+      <artifactId>spring-generator</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>in.zeta.aether.spring</groupId>
-			<artifactId>aether-spring-initializr-ui</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+    <dependency>
+      <groupId>in.zeta.aether.spring</groupId>
+      <artifactId>aether-spring-initializr-ui</artifactId>
+      <scope>runtime</scope>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.spring.initializr</groupId>
-			<artifactId>initializr-web</artifactId>
-		</dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.spring.initializr</groupId>
+      <artifactId>initializr-web</artifactId>
+    </dependency>
 
-	</dependencies>
+  </dependencies>
 
 </project>

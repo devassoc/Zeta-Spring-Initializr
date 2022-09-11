@@ -1,0 +1,23 @@
+app.name=<Enter App Name>
+app.version=@project.version@
+info.app.version=@project.version@
+
+# Default DB Related Properties
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+
+# Please change it if it's required
+certstore.proteus.endpoint = https://proteus-cipher.mum1-pp.zeta.in/zeta.in
+sessions.proteus.endpoint = https://proteus-cipher.mum1-pp.zeta.in/zeta.in
+
+# Health and Metrics Properties
+management.endpoints.web.base-path=/
+management.endpoints.web.exposure.include=health,prometheus,metrics
+management.endpoints.web.path-mapping.health=actuator/health
+management.endpoint.prometheus.enabled=true
+management.metrics.distribution.percentiles-histogram.http.server.requests=true
+management.metrics.distribution.percentiles.http.server.requests=0.5,0.95,0.99,0.999
