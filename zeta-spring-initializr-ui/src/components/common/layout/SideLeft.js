@@ -178,7 +178,7 @@ function SideLeft() {
                         rel='noopener noreferrer'
                         href='https://github.com/spring-io/initializr/'
                       >
-                        Aether Spring Initializr
+                        Zeta Spring Initializr
                       </a>
                     </span>{' '}
                     <span>and</span>{' '}
