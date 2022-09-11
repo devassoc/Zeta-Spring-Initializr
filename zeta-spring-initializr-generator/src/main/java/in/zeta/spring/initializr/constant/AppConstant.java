@@ -29,6 +29,8 @@ public class AppConstant {
 
   public static final String SERVICE_ANNOTATION = "org.springframework.stereotype.Service";
 
+  public static final String CLOCK_ANNOTATION = "in.zeta.springframework.boot.commons.annotations.Clocked";
+
   public static final String STRING_TYPE = "java.lang.String";
 
   public static final String ZETA_SPRING_COMMON_BASE_PACKAGE =

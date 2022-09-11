@@ -72,6 +72,7 @@ public class ServiceContributor<
             .returning("String")
             .parameters(new Parameter(AppConstant.STRING_TYPE, "name"))
             .body(new JavaReturnStatement(new JavaMethodInvocation("name", "trim")));
+    getApiMethod.annotate(Annotation.name(AppConstant.CLOCK_ANNOTATION));
 
     restController.addMethodDeclaration(getApiMethod);
   }
