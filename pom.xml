@@ -9,16 +9,15 @@
     <!-- lookup parent from repository -->
   </parent>
   <groupId>in.zeta.aether.spring</groupId>
-  <artifactId>spring-initializr</artifactId>
+  <artifactId>zeta-spring-initializr</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Aether Spring Initializr</name>
   <description>Showcase various ways to customize Spring Initializr</description>
 
   <modules>
-    <module>aether-spring-app</module>
-    <module>aether-spring-generator</module>
-    <module>aether-spring-initializr-ui</module>
+    <module>zeta-spring-initializr-app</module>
+    <module>zeta-spring-initializr-generator</module>
+    <module>zeta-spring-initializr-ui</module>
   </modules>
 
   <properties>
@@ -31,19 +30,19 @@
 
       <dependency>
         <groupId>in.zeta.aether.spring</groupId>
-        <artifactId>aether-spring-app</artifactId>
+        <artifactId>zeta-spring-initializr-app</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
         <groupId>in.zeta.aether.spring</groupId>
-        <artifactId>spring-generator</artifactId>
+        <artifactId>zeta-spring-initializr-generator</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
 
       <dependency>
         <groupId>in.zeta.aether.spring</groupId>
-        <artifactId>aether-spring-initializr-ui</artifactId>
+        <artifactId>zeta-spring-initializr-ui</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
 

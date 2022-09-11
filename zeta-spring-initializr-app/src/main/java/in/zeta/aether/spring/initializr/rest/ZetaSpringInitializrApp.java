@@ -6,9 +6,9 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @EnableCaching
-public class SimpleServiceApplication {
+public class ZetaSpringInitializrApp {
 
   public static void main(String[] args) {
-    SpringApplication.run(SimpleServiceApplication.class, args);
+    SpringApplication.run(ZetaSpringInitializrApp.class, args);
   }
 }

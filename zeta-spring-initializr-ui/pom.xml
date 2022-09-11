@@ -6,8 +6,7 @@
     <artifactId>spring-initializr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>aether-spring-initializr-ui</artifactId>
-  <name>start.spring.io client</name>
+  <artifactId>zeta-spring-initializr-ui</artifactId>
 
   <build>
     <plugins>

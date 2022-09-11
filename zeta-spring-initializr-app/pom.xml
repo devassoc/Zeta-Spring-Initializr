@@ -6,26 +6,31 @@
     <artifactId>spring-initializr</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>spring-generator</artifactId>
-  <name>Aether Spring Generator</name>
-  <description>Showcase the ProjectGenerator API</description>
+
+  <artifactId>zeta-spring-initializr-app</artifactId>
+  <description>Showcase a custom web endpoint</description>
 
   <dependencies>
     <dependency>
-      <groupId>io.spring.initializr</groupId>
-      <artifactId>initializr-generator</artifactId>
+      <groupId>in.zeta.aether.spring</groupId>
+      <artifactId>zeta-spring-initializr-generator</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>io.spring.initializr</groupId>
-      <artifactId>initializr-generator-spring</artifactId>
+      <groupId>in.zeta.aether.spring</groupId>
+      <artifactId>zeta-spring-initializr-ui</artifactId>
+      <scope>runtime</scope>
     </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <scope>test</scope>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.spring.initializr</groupId>
+      <artifactId>initializr-web</artifactId>
+    </dependency>
+
   </dependencies>
 
 </project>
