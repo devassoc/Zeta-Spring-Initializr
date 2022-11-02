@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 /**
  * Main Controller.
  *
- * @author Brian Clozel
  */
 @Controller
 public class HomeController {
