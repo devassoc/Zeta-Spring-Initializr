@@ -4,6 +4,8 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+/zeta-spring-initializr-ui/node_modules
+
 ### STS ###
 .apt_generated
 .classpath
