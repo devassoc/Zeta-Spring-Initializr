@@ -8,6 +8,7 @@ initializr:
     value: zeta-app
 
   env:
+
     boms:
       codecentric-spring-boot-admin:
         groupId: de.codecentric
@@ -185,14 +186,25 @@ initializr:
           id: zeta-delta
           groupId: in.zeta
           artifactId: delta-library
-          version: 2.1.12
+          version: "[1.0.0,)"
           description: Zeta Delta Library
         - name: Zeta-Crux
           id: zeta-crux
           groupId: in.zeta
           artifactId: crux
-          version: 2.3.4
+          version: "[1.0.0,)"
           description: Zeta Crux Library
+        - name: Zeta-Elenchos
+          id: zeta-elenchos
+          groupId: in.zeta
+          artifactId: elenchos
+          version: "[1.0.0,)"
+          description: Zeta Elenchos Library
+          logging:
+            level:
+              ROOT: INFO
+            pattern:
+              console: "%msg%n"
         - name: spring-boot-commons
           id: spring-boot-commons
           groupId: in.zeta
@@ -1045,7 +1057,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-datadog
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to Datadog, a dimensional time-series SaaS with built-in dashboarding and alerting.
           links:
             - rel: reference
@@ -1055,7 +1067,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-influx
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to InfluxDB, a dimensional time-series server that support real-time stream processing of data.
           links:
             - rel: reference
@@ -1065,7 +1077,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-graphite
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to Graphite, a hierarchical metrics system backed by a fixed-size database.
           links:
             - rel: reference
@@ -1075,7 +1087,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-new-relic
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to New Relic, a SaaS offering with a full UI and a query language called NRQL.
           links:
             - rel: reference
@@ -1085,7 +1097,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-prometheus
           scope: runtime
-          starter: false
+          starter: true
           description: Expose Micrometer metrics in Prometheus format, an in-memory dimensional time series database with a simple built-in UI, a custom query language, and math operations.
           links:
             - rel: reference
@@ -1148,7 +1160,7 @@ initializr:
           groupId: org.testcontainers
           artifactId: junit-jupiter
           bom: testcontainers
-          scope: test
+          scope: runtime
           starter: false
           links:
             - rel: reference
@@ -1561,20 +1573,37 @@ initializr:
         format: project
       default: true
       action: /starter.zip
+
   packagings:
     - name: Jar
       id: jar
       default: true
   javaVersions:
-    - id: 11
-      default: false
     - id: 1.8
       name: 8
+      default: false
+    - id: 11
+      default: false
+    - id: 17
       default: true
   languages:
     - name: Java
       id: java
       default: true
+  build:
+    -plugins:
+      -plugin:
+        groupId: com.github.randomcodeorg.ppplugin
+        artifactId: ppplugin
+        version: 0.1.0
+        executions:
+          -execution:
+            -phase: compile
+            -goals:
+              -goal: postprocess
+
+
+
   bootVersions:
     - id: 2.4.0-SNAPSHOT
       name: 2.4.0 (SNAPSHOT)

@@ -19,6 +19,7 @@ package in.zeta.spring.initializr.app.controller;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Main Controller.
@@ -27,7 +28,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-  @GetMapping(path = "/ui", produces = MediaType.TEXT_HTML_VALUE)
+  @RequestMapping(path = "/ui", produces = MediaType.TEXT_HTML_VALUE)
   public String initializrUI() {
     return "forward:index.html";
   }
