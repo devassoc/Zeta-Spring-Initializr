@@ -1,10 +1,16 @@
 HELP.md
 target/
 
-
-
+/zeta-spring-initializr-ui/target/
+/zeta-spring-initializr-ui/analysis/
+/zeta-spring-initializr-ui/.env
+/zeta-spring-initializr-ui/.cache/
+/zeta-spring-initializr-ui/yarn-error.log
+/zeta-spring-initializr-ui/public/
 /zeta-spring-initializr-ui/node_modules/
 /zeta-spring-initializr-ui/node/
+/zeta-spring-initializr-ui/package-lock.json
+
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
