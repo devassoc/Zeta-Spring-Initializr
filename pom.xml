@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.7.2</version>
+    <version>2.7.5</version>
     <relativePath></relativePath>
     <!-- lookup parent from repository -->
   </parent>
@@ -19,15 +19,30 @@
     <module>zeta-spring-initializr-app</module>
     <module>zeta-spring-initializr-generator</module>
     <module>zeta-spring-initializr-ui</module>
+
   </modules>
+
+
+  <repositories>
+    <repository>
+      <id>zeta.initialzr</id>
+      <name>maven</name>
+      <url>https://repo1.maven.org/maven2/</url>
+    </repository>
+  </repositories>
 
   <properties>
     <java.version>1.8</java.version>
     <spring-initializr.version>0.13.0-SNAPSHOT</spring-initializr.version>
-  </properties>
 
+  </properties>
   <dependencyManagement>
     <dependencies>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
 
       <dependency>
         <groupId>in.zeta.spring</groupId>
@@ -52,7 +67,50 @@
         <artifactId>initializr-bom</artifactId>
         <version>${spring-initializr.version}</version>
         <type>pom</type>
-        <scope>import</scope>
+        <scope>compile</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-actuator</artifactId>
+        <version>0.13.0</version>
+
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-generator</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-generator-spring</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-generator-test</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-metadata</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-version-resolver</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-web</artifactId>
+        <version>0.13.0</version>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.initializr</groupId>
+        <artifactId>initializr-web</artifactId>
+        <version>0.13.0</version>
+        <type>test-jar</type>
       </dependency>
 
     </dependencies>
@@ -62,24 +120,19 @@
     <finalName>zeta-spring-intitializr</finalName>
     <plugins>
       <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.24.1</version>
-
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>2.8.2</version>
+        <inherited>false</inherited>
         <configuration>
-          <java>
-            <removeUnusedImports></removeUnusedImports>
-            <googleJavaFormat>
-              <version>1.7</version>
-              <style>GOOGLE</style>
-            </googleJavaFormat>
-          </java>
-          <pom>
-            <sortPom></sortPom>
-          </pom>
+          <skip>true</skip>
         </configuration>
       </plugin>
+
     </plugins>
   </build>
+
+
+
 
 </project>
