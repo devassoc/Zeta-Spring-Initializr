@@ -1,7 +1,8 @@
 HELP.md
 target/
 
-zeta-spring-initializr-ui/node_modules/
+/zeta-spring-initializr-ui/node_modules/
+/zeta-spring-initializr-ui/node/
 
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
@@ -33,4 +34,4 @@ build/
 
 ### VS Code ###
 .vscode/
-/zeta-spring-initializr-ui/node_modules/
+
