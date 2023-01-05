@@ -1313,7 +1313,7 @@ initializr:
               description: Apache Zookeeper Quick Start
         - name: Consul Configuration
           id: cloud-starter-consul-config
-          description: Enable and configure the common patterns inside your application and build large distributed systems with Hashicorp’s Consul. The patterns provided include Service Discovery, Distributed Configuration and Control Bus.
+          description: Enable and configure the common patterns inside your application and build large distributed systems with Hashicorps Consul. The patterns provided include Service Discovery, Distributed Configuration and Control Bus.
           groupId: org.springframework.cloud
           artifactId: spring-cloud-starter-consul-config
           links:
@@ -1573,8 +1573,15 @@ initializr:
         format: project
       default: true
       action: /starter.zip
-
-  packagings:
+    - name: Gradle Project
+      id: gradle-project
+      description: Generate a gradle based project archive
+      tags:
+        build: gradle
+        format: project
+      default: false
+      action: /starter.zip
+   packagings:
     - name: Jar
       id: jar
       default: true
@@ -1590,6 +1597,10 @@ initializr:
     - name: Java
       id: java
       default: true
+    - name: Kotlin
+      id: kotlin
+      default: false
+
   build:
     -plugins:
       -plugin:
