@@ -6,6 +6,7 @@ info.app.version=@project.version@
 server.host='0.0.0.0'
 server.port=<PORT_VALUE>
 
+
 debug=true
 trace=true
 warn=true
