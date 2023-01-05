@@ -1,6 +1,16 @@
+
 app.name=<Enter App Name>
 app.version=@project.version@
 info.app.version=@project.version@
+
+server.host='0.0.0.0'
+server.port=<PORT_VALUE>
+
+debug=true
+trace=true
+warn=true
+
+spring.output.ansi.enabled=always
 
 # Default DB Related Properties
 spring.jpa.hibernate.ddl-auto=none
@@ -16,8 +26,13 @@ sessions.proteus.endpoint = https://proteus-cipher.mum1-pp.zeta.in/zeta.in
 
 # Health and Metrics Properties
 management.endpoints.web.base-path=/
-management.endpoints.web.exposure.include=health,prometheus,metrics
+management.endpoints.web.exposure.include=health,prometheus,metrics,loggers
 management.endpoints.web.path-mapping.health=actuator/health
 management.endpoint.prometheus.enabled=true
 management.metrics.distribution.percentiles-histogram.http.server.requests=true
 management.metrics.distribution.percentiles.http.server.requests=0.5,0.95,0.99,0.999
+
+
+otel.exporter.otlp.endpoint=http://localhost:4317
+otel.resource.attributes=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
+service.name=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
