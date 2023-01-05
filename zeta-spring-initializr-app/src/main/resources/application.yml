@@ -1,16 +1,6 @@
 server:
   port: 8094
 
-management:
-  security:
-    - enabled: true
-      roles: ADMIN
-  basic:
-    enabled: true
-  user:
-    - name: admin
-      password: admin
-
 initializr:
   group-id:
     value: in.zeta
