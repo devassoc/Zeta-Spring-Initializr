@@ -1,10 +1,11 @@
 
-app.name=<Enter App Name>
+app.name=Sample-zeta-app
 app.version=@project.version@
 info.app.version=@project.version@
 
 server.host='0.0.0.0'
-server.port=<PORT_VALUE>
+server.port=8082
+
 
 debug=true
 trace=true

@@ -1,9 +1,5 @@
-@Library("bankingdevops@master") _
+@Library("devops@master") _
 
-bankingJenkinsJob(
-mavenCommand: 'mvn clean package -DskipTests',
-shouldRunSonarAnalysis: 'true',
-shouldRunSonarGate: 'false',
-multiTenantResourcesDirectoryPath: 'application/src/multiTenantResources',
-openAPIPomPath: 'application'
+zetaJenkinsJob(
+        mavenCommand: 'mvn clean package -DskipTests',
 )

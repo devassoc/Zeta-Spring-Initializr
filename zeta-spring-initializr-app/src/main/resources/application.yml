@@ -181,6 +181,9 @@ initializr:
       v1-format-compatibility-range: "[2.0.0.RELEASE,2.4.0-M1)"
       v2-format-compatibility-range: "2.4.0-M1"
     repositories:
+      elenchos-repo:
+        name: elenchos-dependency
+        url: https://preeti_dev@bitbucket.org/zetaengg/elenchos-god-controller.git
       spring-releases:
         name: Spring Releases
         url: https://repo.spring.io/release
@@ -208,13 +211,10 @@ initializr:
           id: zeta-elenchos
           groupId: in.zeta
           artifactId: elenchos
-          version: "[1.0.0,)"
           description: Zeta Elenchos Library
-          logging:
-            level:
-              ROOT: INFO
-            pattern:
-              console: "%msg%n"
+          repository: elenchos-repo
+          scope: runtime
+          classifier: exec
         - name: spring-boot-commons
           id: spring-boot-commons
           groupId: in.zeta

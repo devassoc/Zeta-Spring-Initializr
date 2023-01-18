@@ -25,8 +25,7 @@ class SimpleGenerator {
               context.registerBean(
                   InitializrMetadata.class,
                   () ->
-                      InitializrMetadataBuilder.create()
-                          .withInitializrMetadata(new ClassPathResource("sample-metadata.json"))
+                      InitializrMetadataBuilder.create().withInitializrMetadata(new ClassPathResource("sample-metadata.json"))
                           .build());
               context.registerBean(
                   IndentingWriterFactory.class, IndentingWriterFactory::withDefaultSettings);

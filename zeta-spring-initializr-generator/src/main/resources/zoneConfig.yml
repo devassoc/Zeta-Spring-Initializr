@@ -1,0 +1,81 @@
+---
+#ZONE_NAME is deprecated. Please refrain from using the value. This is only for backward compat. Define zone specific variables here and consume directly(Eg: BASE_URL) instead of hard coding variables based on environment in your script(s).
+ZONE_NAME: staging
+# This is required in hercules url auto creation
+ZONE_NAME_ALIAS: mum1-stage
+OLD_ZONE_NAME: aws-default-staging-mumbai
+ZONE: aws-default-staging-mumbai
+AUTH_TOKEN: UklxYklTQUJ2aDBCK1hJZlppMFJ4UndjTHRSejIyZmNaRXhtMVhKZFYycG1XZTJNMGEyeklMQmx6UnM9OkFRRjB2UkdML21NNjBicW1qNkJlbmhuc3ovSGlnVm4xZjdwS29oY2dRQ2hXaXhzM3lpMEZTZlExSHA5ZGdsa2UwTVlVNCtxMmt5b21EamkvRGZNTldVTGc5OEhpOHYwbnF4VldFNUdia0ljb2RMRHZTeTZFS05mdFVKUzdGci9CYnhXenJrM0NKZ2F1a1hZWlEyR1RVWHgxVHdOdkxaekU=
+BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/proteus
+OLYMPUS_HERA_BASE_URL: https://0-0-elenchos.mum1-stage.zetaapps.in
+ELENCHOS_BASE_URL: https://0-0-elenchos.mum1-stage.zetaapps.in
+HERA_BASE_URL: https://sb1-god-aura.mum1-stage.zetaapps.in/hera
+APOLLO_APP_BASE_URL: https://apollo.stage.zeta.in
+OAUTH_BASE_URL: https://oauth-stage.zetaapps.in
+HERCULES_SERVICE_BASE_URL: https://service.hercules.mum1-stage.zeta.in/
+APOLLO_SDK_AUTH_BASE_URL: https://apollo-sdk-auth.stage.zeta.in
+CIPHER3DS_PROTEUS_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/proteus
+ACS_MANAGER_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/acs-manager
+HARPOCRATES_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/harpocrates
+EDITH_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/edith
+MASTERCARD_CIPHER_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/mastercardcipher
+VISA_CIPHER_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/visacipher
+RUPAY_CIPHER_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/rupaycipher
+AMEX_CIPHER_BASE_URL: https://sb1-god-cipher.mum1-stage.zetaapps.in/amexcipher
+DELTA_BASE_URL: https://0-0-elenchos.mum1-stage.zetaapps.in/delta/api/v2/
+BOOKS_BASE_URL: http://book.book.mum1-stage.zeta.in/books-service/1.0
+book_base_url: http://book.book.mum1-stage.zeta.in
+SUPER_CARD_NN_BASE_URL: http://10.42.1.192:9092/
+ATROPOS_BASE_URL: https://api.app-infra.mum1-stage.zeta.in
+
+CERBERUS_CERTIFICATE: ''
+FLOCK_WEBHOOK_URL: https://api.flock.com/hooks/sendMessage/ed82d7e1-0511-48cd-ac6a-93e6397970b6
+ENABLE_OLYMPUS_HERA: true
+ENABLE_VERBOSE_LOGGING: true
+ENABLE_2FA_SETUP: true
+SANDBOX_TOKEN: ''
+HERA_AUTH_TOKEN: ''
+AETHER_AUTH_TOKEN: ''
+ARIES_AUTH_TOKEN: ''
+CERBERUS_SECRET_KEY: ''
+SYSTEM_TENANT_TOKEN: ''
+
+CERBERUS_OAUTH_AGENT_SECRET_KEY: w6OSCSUpDguPXL0vBpAg11t3p0TwQ95mTYMU7gfrk8M=
+APOLLO_SDK_AUTH_IDP_ENDPOINT: https://apollo-sdk-auth.stage.zeta.in/apollo-sdk-auth/health
+APOLLO_SDK_AUTH_IDP_CERT: -----BEGIN CERTIFICATE-----\nMIIBeDCCAR+gAwIBAgIVAOhquvkKblDrXWh+J3Perb1klQqgMAoGCCqGSM49BAMC\nMBoxGDAWBgNVBAMMD2Fwb2xsby1zZGstYXV0aDAeFw0yMDAzMjIxMzM5MTJaFw0z\nMDAzMjAxMzM5MTJaMBoxGDAWBgNVBAMMD2Fwb2xsby1zZGstYXV0aDBZMBMGByqG\nSM49AgEGCCqGSM49AwEHA0IABIM+TiQgIPlxqxTyeDrLvj6qRZ3cmndepsqS7/Kj\n1iY1SV+oSqFaIokFGESn2/ioRvzo6B0fesJBO4icOF5qxQOjQjBAMB0GA1UdDgQW\nBBS6A/v+KJDuYUQdPEn9un639D8p4DAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/\nBAUwAwEB/zAKBggqhkjOPQQDAgNHADBEAiA36gjkmMfiFsjeK7ISx/hOXqXSBMaJ\nAsWZ6J0eKbjkUAIgdXl4qzOnWsQGOkL4o5X3ompA8fsKm0mIteTx+1MSAz4=\n-----END CERTIFICATE-----
+APOLLO_SDK_AUTH_AGENT_SECRET_KEY: nHFM5ajHs7kYIMDWa1EvShg2rUj/HpjfyVG3WePIA08=
+APOLLO_SECRET_KEY: DApkMP94HHpzJKjV/bA/5spb9fqlU8viHTWMfXFN8Hw=
+APOLLO_SECRET_KEY_ID: secretId1
+ACS_MANAGER_SECRET_KEY_ID: secretId1
+EDITH_SECRET_KEY_ID: secretId1
+OAUTH_SECRET_KEY_ID: secretKeyId0
+
+#Crux
+DEFAULT_OAUTH_REDIRECTION_URL: https://zeta.tech
+OAUTH_REDIRECTION_URLS: https://zeta.tech
+DEFAULT_OAUTH_APP_PIC_URL: https://zeta.tech
+
+# Vault
+VAULT_URL: https://vault.zone-vault:8200
+VAULT_PATH: cluster/zone-infra/tenant-onboarding/zone-config
+
+# tenantonboarding-1.0.jar
+CERBERUS2_BASE_URL: https://proteus-cipher.mum1-stage.zeta.in
+CERBERUS_IDP_SECRET_KEY_ID: secretKeyId0
+CERBERUS_IDP_SECRET_KEY: w6OSCSUpDguPXL0vBpAg11t3p0TwQ95mTYMU7gfrk8M=
+CERBERUS_IDP_CERT: |-
+  -----BEGIN CERTIFICATE-----
+  MIIBazCCARGgAwIBAgIVANU6nxRK7rCUfc+DOaMt/q9PM/ljMAoGCCqGSM49BAMC
+  MBMxETAPBgNVBAMMCGNlcmJlcnVzMB4XDTE4MTAxODEwNTEzNloXDTM4MTAxODA3
+  MTUzNlowEzERMA8GA1UEAwwIY2VyYmVydXMwWTATBgcqhkjOPQIBBggqhkjOPQMB
+  BwNCAATfhne7Fd+NuIM4BCpb4VH9Kg2kx0lQO9ikMqvSoBVRFLbPFSzNdjqWVvsl
+  06GQJSfyRcKnj7gv//WaLhXT+yBXo0IwQDAdBgNVHQ4EFgQUwTWEAfGGH5NDfpDH
+  1UFqo7EhPtUwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wCgYIKoZI
+  zj0EAwIDSAAwRQIgXXTjyzMGIbMwn5IllYw40fcBEFL43iogB44lkjqVL9MCIQDe
+  mUnLstQbJ27tg2JezvljmothZiGJdOe9+FPHVgLJRA==
+  -----END CERTIFICATE-----
+CERBERUS_IDP_ENDPOINT: https://oauth-stage.zetaapps.in/idp/challenge
+CERBERUS_ADMIN_URL: https://cerberus-admin-stage.zetaapps.in
+SANDBOX_ADMIN_SCOPE: admin
+OPEN_API_S3_BUCKET_ACCESS_KEY: ''
+OPEN_API_S3_BUCKET_SECRET_KEY: ''
