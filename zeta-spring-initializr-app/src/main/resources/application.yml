@@ -1,6 +1,16 @@
 server:
   port: 8094
 
+management:
+  security:
+    - enabled: true
+      roles: ADMIN
+  basic:
+    enabled: true
+  user:
+    - name: admin
+      password: admin
+
 initializr:
   group-id:
     value: in.zeta
@@ -173,7 +183,13 @@ initializr:
     repositories:
       elenchos-repo:
         name: elenchos-dependency
-        url: https://preeti_dev@bitbucket.org/zetaengg/elenchos-god-controller.git
+        url: https://bitbucket.org/zetaengg/elenchos-god-controller.git
+      crux-repo:
+        name: crux-dependency
+        url: https://bitbucket.org/zetaengg/crux-lite/src/master/
+      delta-repo:
+        name: delta-dependency
+        url: https://bitbucket.org/zetaengg/delta-client/src/master/
       spring-releases:
         name: Spring Releases
         url: https://repo.spring.io/release
@@ -189,22 +205,28 @@ initializr:
           id: zeta-delta
           groupId: in.zeta
           artifactId: delta-library
-          version: "2.1.12"
+          version: "[1.0.0,)"
           description: Zeta Delta Library
+          repository: delta-repo
         - name: Zeta-Crux
           id: zeta-crux
           groupId: in.zeta
           artifactId: crux
-          version: "2.3.4"
+          version: "[1.0.0,)"
           description: Zeta Crux Library
+          repository: crux-repo
         - name: Zeta-Elenchos
           id: zeta-elenchos
           groupId: in.zeta
           artifactId: elenchos
+          version: "[1.0.0,)"
           description: Zeta Elenchos Library
           repository: elenchos-repo
-          scope: runtime
-          classifier: exec
+          logging:
+            level:
+              ROOT: INFO
+            pattern:
+              console: "%msg%n"
         - name: spring-boot-commons
           id: spring-boot-commons
           groupId: in.zeta
@@ -1058,7 +1080,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-datadog
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to Datadog, a dimensional time-series SaaS with built-in dashboarding and alerting.
           links:
             - rel: reference
@@ -1068,7 +1090,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-influx
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to InfluxDB, a dimensional time-series server that support real-time stream processing of data.
           links:
             - rel: reference
@@ -1088,7 +1110,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-new-relic
           scope: runtime
-          starter: false
+          starter: true
           description: Publish Micrometer metrics to New Relic, a SaaS offering with a full UI and a query language called NRQL.
           links:
             - rel: reference
@@ -1098,7 +1120,7 @@ initializr:
           groupId: io.micrometer
           artifactId: micrometer-registry-prometheus
           scope: runtime
-          starter: false
+          starter: true
           description: Expose Micrometer metrics in Prometheus format, an in-memory dimensional time series database with a simple built-in UI, a custom query language, and math operations.
           links:
             - rel: reference
@@ -1314,7 +1336,7 @@ initializr:
               description: Apache Zookeeper Quick Start
         - name: Consul Configuration
           id: cloud-starter-consul-config
-          description: Enable and configure the common patterns inside your application and build large distributed systems with Hashicorps Consul. The patterns provided include Service Discovery, Distributed Configuration and Control Bus.
+          description: Enable and configure the common patterns inside your application and build large distributed systems with Hashicorp’s Consul. The patterns provided include Service Discovery, Distributed Configuration and Control Bus.
           groupId: org.springframework.cloud
           artifactId: spring-cloud-starter-consul-config
           links:
@@ -1574,18 +1596,30 @@ initializr:
         format: project
       default: true
       action: /starter.zip
-    - name: Gradle Project
-      id: gradle-project
+    - name: Gradle Project (Groovy)
+      id: gradle-project-kotlin
       description: Generate a gradle based project archive
       tags:
         build: gradle
-        format:project
+        format: project
+      default: true
+      action: /starter.zip
+    - name: Gradle Project (Kotlin)
+      id: gradle-project-kotlin
+      description: Generate a gradle based project archive
+      tags:
+        build: gradle
+        format: project
+      default: true
+      action: /starter.zip
 
-
-   packagings:
+  packagings:
     - name: Jar
       id: jar
       default: true
+    - name: War
+      id: war
+      default: false
   javaVersions:
     - id: 1.8
       name: 8
@@ -1594,6 +1628,8 @@ initializr:
       default: false
     - id: 17
       default: true
+    - id: 19
+      default: false
   languages:
     - name: Java
       id: java
@@ -1601,7 +1637,9 @@ initializr:
     - name: Kotlin
       id: kotlin
       default: false
-
+    - name: Groovy
+      id: grrovy
+      default: false
 
   build:
     -plugins:
@@ -1627,3 +1665,12 @@ initializr:
     - id: 2.3.2.RELEASE
       name: 2.3.2
       default: true
+    - id: 3.0.1
+      name: 3.0.1
+      default: true
+    - id: 2.7.9.BUILD-SNAPSHOT
+      name: 2.7.9 (SNAPSHOT)
+      default: false
+    - id: 3.0.2.BUILD-SNAPSHOT
+      name: 3.0.2 (SNAPSHOT)
+      default: false

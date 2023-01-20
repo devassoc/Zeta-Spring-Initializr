@@ -1,5 +1,19 @@
-@Library("devops@master") _
+pipeline {
+  agent any
+  triggers {
+     pollSCM '* * * * *'
 
-zetaJenkinsJob(
-        mavenCommand: 'mvn clean package -DskipTests',
-)
+  }
+  stages {
+    stage('Build') {
+       steps{
+          mvn clean -U package
+        }
+    }
+    stage('Deploy') {
+        steps{
+           mvn spring-boot:run
+        }
+    }
+  }
+}
