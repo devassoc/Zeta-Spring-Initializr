@@ -140,22 +140,6 @@
           <skip>true</skip>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>com.diffplug.spotless</groupId>
-        <artifactId>spotless-maven-plugin</artifactId>
-        <version>2.29.0</version>
-        <configuration>
-          <java>
-            <includes>
-              <include>zeta-spring-initializr-app/src/main/java/**/*.java</include>
-              <include>zeta-spring-initializr-app/src/main/resources/application.yml</include>
-              <include>zeta-spring-initializr-generator/src/main/java/**/*.java</include>
-              <include>zeta-spring-initializr-ui/public/**/*.java</include>
-              <include>zeta-spring-initializr-ui/public/**/*.html</include>
-            </includes>
-          </java>
-        </configuration>
-      </plugin>
 
     </plugins>
   </build>
