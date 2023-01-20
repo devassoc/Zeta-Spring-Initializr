@@ -7,6 +7,8 @@ public class AppConstant {
   public static final String ZETA_MAVEN_PARENT_ARTIFACT_ID = "zeta-spring-boot-pom";
   public static final String ZETA_MAVEN_PARENT_VERSION = "1.1.2";
 
+
+  public static final String SPRING_VALUE="org.springframework.beans.factory.annotation.Value";
   // TODO: Read from config
   public static final String ZETA_MAVEN_COMMONS_GROUP_ID = "in.zeta";
   public static final String ZETA_MAVEN_COMMONS_ARTIFACT_ID = "spring-boot-commons";
@@ -33,6 +35,26 @@ public class AppConstant {
 
   public static final String STRING_TYPE = "java.lang.String";
 
+  public static final String zone_list="\"#{'${zoneName.list}'.split(',')}\"";
+
+  public static final String jenkins_list="\"#{'${jenkins_env.list}'.split(',')}\"";
+
+  public static final String bitbucketid="\"#{'${bitbucket_project_id.list}'.split(',')}\"";
+
+  public static final String jenkins_url_list="\"#{'${jenkins_url.list}'.split(',')}\"";
+
+  public static final String containerimage="\"#{'${container_image.list}'.split(',')}\"";
+
+  public static final String credentiallist="\"#{'${credentialsId.list}'.split(',')}\"";
+
+
+  public static final String tenantId="\"${metadata.olympusTenantID}\"";
+
+  public static final String tenantname="\"${metadata.olympusTenantName}\"";
+
+  public static final String modulename="\"${metadata.moduleName}\"";
+
+  public static  final  String clusterid="\"${cluster.applicationID}\"";
   public static final String ZETA_SPRING_COMMON_BASE_PACKAGE =
       "in.zeta.springframework.boot.commons";
 }

@@ -1,11 +1,11 @@
 
-app.name=Sample-zeta-app
+
+app.name=<Enter App Name>
 app.version=@project.version@
 info.app.version=@project.version@
 
 server.host='0.0.0.0'
-server.port=8082
-
+server.port=8084
 
 debug=true
 trace=true
@@ -37,3 +37,79 @@ management.metrics.distribution.percentiles.http.server.requests=0.5,0.95,0.99,0
 otel.exporter.otlp.endpoint=http://localhost:4317
 otel.resource.attributes=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
 service.name=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
+
+#zoneconfig
+zoneName.list = aws-hdfc-beta-mumbai, aws-default-pp-mumbai , aws-default-prod-mumbai, aws-default-staging-mumbai
+jenkins_env.list = beta,prep,prod,stage
+user_env.list = beta,preprod,prod,stage
+bitbucket_project_id.list = DBMHDFCBETA,DBMPREP,DBMIG,DBMSTAGE
+jdbc_url = jdbc:postgresql://${host}:5432/${database}
+flyway_table_ddl = flyway_schema_history
+flyway_table_dml = flyway_schema_history_dml
+jenkins_url.list = https://jenkins.internal.hdfc-beta.zetaapps.in, https://jenkins.internal.mum1-pp.zeta.in,https://jenkins.internal.mum1.zetaapps.in,  https://jenkins.internal.mum1-stage.zeta.in
+bitbucket_url = https://bitbucket.org/zetaengg
+vault_url = https://vault.zone-vault:8200
+vault_external_url.list = https://vault.internal.hdfc-beta.zetaapps.in/,https://vault.internal.mum1-pp.zeta.in, https://vault.internal.mum1.zetaapps.in/,https://vault.internal.mum1-stage.zeta.in/
+vault_secret_path = secrets/cluster/zone-infra/datainfra-secretstore/generated-dbcreds
+db_operation_doc_link = https://docs.google.com/document/d/18BYnLEi5ZlfZETu16r9C7iaNdN4s9VgxvdbD6HdH5l4/edit?usp=sharing
+psql_access_wiki_link = https://wiki.corp.zeta.in/?ht_kb=access-to-postgresql-database
+apply_db_changes_wiki_link = https://wiki.corp.zeta.in/?ht_kb=apply-schema-changes-through-flywaydb-using-jenkins
+credentials_id = jenkins_flywaydb
+container_name.list = database-ops,database-ops,databaseops,database-ops
+container_image.list = 813361731051.dkr.ecr.ap-south-1.amazonaws.com/data-db-ops:0.2.2, 813361731051.dkr.ecr.ap-south-1.amazonaws.com/data-db-ops:0.2.2,813361731051.dkr.ecr.ap-south-1.amazonaws.com/data-db-ops:0.2.7,813361731051.dkr.ecr.ap-south-1.amazonaws.com/data-db-ops:0.2.7
+credentials_bitbucket_id = bitbucket
+datainfra_bitbucket_id.list = datainfra-bitbucket, datainfra-bitbucket, datainfra-bitbucket,bitbucketvai
+admindb_host.list =beta-hdfc-texas.c0yr1gpqnvdv.ap-south-1.rds.amazonaws.com,preprod-ssl.c8enwqlkg9hw.ap-south-1.rds.amazonaws.com, prod-microservices-ssl-db.c8enwqlkg9hw.ap-south-1.rds.amazonaws.com, stage-dallas-db.cr8nt59zw49b.ap-south-1.rds.amazonaws.com
+admindb_dbname = admin
+vault_cluster_name = zone-infra
+vault_ganymede_secret_path = secrets/cluster/zone-infra/datainfra-secretstore/ganymede-dbcreds
+credentialsId.list = d5f46c84-f328-4d3e-bd2a-127c6f5b193e,303e3c43-8cc4-4a5c-ab04-cbc2a6774e6f, fbc84937-f990-4e4a-8379-44f17d3d3037, d95b54b0-a2d8-45ef-9795-3299e2bd3eee
+nexusBaseUrl = https://nexus.internal.olympus-world.zetaapps.in
+jdbc_url_prefix = jdbc:postgresql://
+zone.repositoryName = application-CI-ddl-scripts
+
+#tenantconfig
+metadata.olympusTenantID=1000057
+metadata.olympusTenantName=Sindhu-Test-Two
+metadata.moduleID=1
+metadata.moduleName=Test Module
+metadata.subscriptionID=9989e7b7-4fbf-442e-a907-f3ede2c12e38
+moduleConfig.Hera.adminUsers.0.email=sindhu@zeta.tech
+moduleConfig.Hera.adminUsers.0.name=Sindhu
+moduleConfig.Hera.adminUsers.0.phoneNumber=+918886520012
+moduleConfig.Hera.calendarCode=1
+moduleConfig.Hera.calendarName=Default Calendar
+moduleConfig.Hera.country=India
+moduleConfig.Hera.currency=INR
+moduleConfig.Hera.defaultLanguage=EN
+moduleConfig.Hera.hera.contactDetails.address.0=Test
+moduleConfig.Hera.hera.contactDetails.contactMetaData.0=Test
+moduleConfig.Hera.hera.contactDetails.contactName=Test User
+moduleConfig.Hera.hera.contactDetails.contactNumber=+919876543210
+moduleConfig.Hera.hera.contactDetails.emailID=test@zeta.tech
+moduleConfig.Hera.hera.flags.allowedProductTypes.0=*
+moduleConfig.Hera.hera.flags.allowedProductsForAccountCreation=*
+moduleConfig.Hera.hera.flags.canCreateAccountWithUnverifiedNumber=false
+moduleConfig.Hera.hera.flags.isAddOnCardAllowed=false
+moduleConfig.Hera.hera.flags.isCashCardAllowed=false
+moduleConfig.Hera.hera.flags.pinBlockConfiguration.enabled=false
+moduleConfig.Hera.hera.flags.pinBlockConfiguration.maxPinFailureLimit=1
+moduleConfig.Hera.hera.flags.pinBlockConfiguration.periodInDays=100
+moduleConfig.Hera.hera.flags.preventEscrow=true
+moduleConfig.Hera.hera.flags.preventNonReloadableCards=false
+moduleConfig.Hera.hera.flags.preventVirtualSupercard=true
+moduleConfig.Hera.hera.flags.shouldCreateCounterLedger=false
+moduleConfig.Hera.hera.flags.shouldZetaSettleMerchant=false
+moduleConfig.Hera.isBank=
+moduleConfig.Hera.timezone=Asia/Kolkata
+moduleConfig.Hera.weekStartOffset=1
+moduleConfig.Hera.yearStartDay=1
+moduleConfig.Hera.yearStartMonth=1
+
+
+#clusterconfig
+cluster.applicationName=hera
+cluster.applicationID=1
+cluster.applicationVersion=0.0.32
+cluster.clusterID=0
+cluster.clusterName=legacy

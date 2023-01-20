@@ -1,0 +1,96 @@
+package in.zeta.zetaapp.controller;
+
+import org.apache.coyote.Response;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.text.MessageFormat;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
+
+
+@RestController
+@RequestMapping("api/v1")
+public class DemoController {
+
+
+
+	@GetMapping
+	@CrossOrigin
+	public String getName(String name) {
+		return name.trim();
+	}
+
+	@Value("#{'${zoneName.list}'.split(',')}")
+	public List<String> zone_names;
+
+	@Value("#{'${jenkins_env.list}'.split(',')}")
+	public List<String> jenkinslist;
+
+
+	@Value("#{'${bitbucket_project_id.list}'.split(',')}")
+	public List<String> bitbucketid;
+
+	@Value("#{'${jenkins_url.list}'.split(',')}")
+	public List<String> jenkinsurllist;
+
+	@Value("#{'${container_image.list}'.split(',')}")
+	public List<String> containername;
+
+	@Value("#{'${credentialsId.list}'.split(',')}")
+	public List<String> credentiallist;
+
+	@Value("#{'$vault_external_url.list}'.split(',')}")
+	public List<String> vaultlist;
+
+
+
+	@Value("${metadata.olympusTenantID}")
+	public String tenantid;
+
+
+
+
+	@Value("${metadata.olympusTenantName}")
+	public String tenantname;
+
+
+	@Value("${metadata.moduleName}")
+	public String modulename;
+
+	@Value("${cluster.applicationName}")
+	public String clusterappname;
+
+	@Value("${cluster.clusterName}")
+	public String clustername;
+
+	@Value("${cluster.applicationID}")
+	public String clusterapplicationID;
+
+
+
+
+	@GetMapping(value = "/elonchos/config/{zone}/{tenantId}/{clusterid}",produces = "text/html")
+	public ResponseEntity<String> testzone(@PathVariable(required = true) String zone,@PathVariable(required = true) String tenantId,@PathVariable(required = true) String clusterid) {
+		HashMap<String,String[]> zones=new HashMap<>();
+		for(int i=0;i<zone_names.size();i++) {
+			String[] zoneconfigs={jenkinslist.get(i),bitbucketid.get(i),jenkinsurllist.get(i),credentiallist.get(i),containername.get(i)};
+			zones.putIfAbsent(zone_names.get(i).trim(),zoneconfigs);
+		}
+		HashMap<String,String[]> tenants=new HashMap<>();
+		tenants.putIfAbsent(tenantid.trim(),new String[]{tenantname,modulename});
+
+		HashMap<String,String[]> clusters=new HashMap<>();
+		clusters.putIfAbsent(clusterapplicationID.trim(),new String[]{clusterappname,clustername});
+		return ResponseEntity.ok(MessageFormat.format("Testing at zone <strong> {0}</strong> with following criteria: {1}<br/>{2}<br/>{3}<br/>{4}<br/>{5}<br/><br/><strong>{6}</strong><br/>{7}<br/><strong>{8}</strong>",zone,zones.get(zone)[0],zones.get(zone)[1],zones.get(zone)[2],zones.get(zone)[3],zones.get(zone)[4],tenants.get(tenantId)[0],tenants.get(tenantId)[1],clusters.get(clusterid)[0]));
+		//return ResponseEntity.ok(bitbucketid.size()+" "+jenkinsurllist.size()+ " "+credentiallist.size()+" "+containername.size());
+	}
+
+
+
+
+}
