@@ -101,6 +101,7 @@ public class ControllerContributor<
     f15.annotate(val5);
     JavaFieldDeclaration f16= JavaFieldDeclaration.field("credentials").returning("List<String>");
     f16.annotate(val6);
+
     JavaFieldDeclaration f17= JavaFieldDeclaration.field("tenantid").returning("String");
     f17.annotate(val7);
     JavaFieldDeclaration f18= JavaFieldDeclaration.field("tenantname").returning("String");
