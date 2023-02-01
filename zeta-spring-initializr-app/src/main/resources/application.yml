@@ -222,11 +222,6 @@ initializr:
           version: "[1.0.0,)"
           description: Zeta Elenchos Library
           repository: elenchos-repo
-          logging:
-            level:
-              ROOT: INFO
-            pattern:
-              console: "%msg%n"
         - name: spring-boot-commons
           id: spring-boot-commons
           groupId: in.zeta
@@ -234,6 +229,12 @@ initializr:
           version: 2.7.3
           description: Zeta Spring Boot Commons Library
           starter: true
+    - name: Resilience
+      content:
+        - name: Resilience-pattern
+          groupId: io.github.resilience4j
+          artifactId: resilience4j-spring-boot2
+          version: 1.6.1
     - name: Developer Tools
       content:
         - name: Spring Native [Experimental]

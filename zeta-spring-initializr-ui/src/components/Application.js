@@ -10,7 +10,7 @@ import React, {
   useState,
 } from 'react'
 import { toast } from 'react-toastify'
-
+import { Button, Modal } from 'react-bootstrap';
 import useHash from './utils/Hash'
 import useWindowsUtils from './utils/WindowsUtils'
 import { AppContext } from './reducer/App'
@@ -61,7 +61,9 @@ export default function Application() {
       })
     }
   }, [dispatch, dispatchInitializr, windowsUtils.origin])
-
+const [openm,setopenm]=useState(true);
+     const changestatusmodal=()=>setopenm(false);
+   //  useEffect(setopenm(true),[openm]);
   const onSubmit = async () => {
     if (generating || list) {
       return
@@ -82,6 +84,7 @@ export default function Application() {
   }
 
   const onExplore = async () => {
+
     const url = `${windowsUtils.origin}/starter.zip`
     dispatch({ type: 'UPDATE', payload: { explore: true, list: false } })
     const project = await getProject(
@@ -105,9 +108,35 @@ export default function Application() {
       payload: { list: false, share: false, explore: false, nav: false },
     })
   }
+  console.log(openm);
 
   return (
     <>
+    <Modal show={openm}>
+                  <Modal.Header closeButton onclick={changestatusmodal}>
+                  <h1 className='left'>Spring Initializr</h1>
+                          <h2 className='right'>Zeta</h2>
+                  </Modal.Header>
+
+                  <Modal.Body >
+              <pre>
+                   1.  Generate to Generate
+                   2.  Explore to see Project structure
+                   3.  Share to share others your configs
+                   4.  Add dependencies to add Zeta dependencies
+              </pre>
+                  </Modal.Body>
+                  <Modal.Footer >
+
+        <br/>
+        <button   className='btn btn-success' onClick={changestatusmodal}>Got it!!!</button>
+
+                  </Modal.Footer>
+
+              </Modal>
+
+
+
       <BodyClassName className={theme} />
       <Suspense fallback=''>
         <HotKeys

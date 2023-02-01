@@ -72,8 +72,21 @@ public class ServiceContributor<
             .returning("String")
             .parameters(new Parameter(AppConstant.STRING_TYPE, "name"))
             .body(new JavaReturnStatement(new JavaMethodInvocation("name", "trim")));
-    getApiMethod.annotate(Annotation.name(AppConstant.CLOCK_ANNOTATION));
-
+    Annotation bulkheadannotation =
+            Annotation.name(
+                   "Bulkhead",
+                    (builder) -> {
+                     builder.attribute("name", String.class, "apiv1service");
+                      builder.attribute("fallbackMethod",String.class,"getdefault");
+                    });
+    getApiMethod.annotate(bulkheadannotation);
+    JavaMethodDeclaration getdefaultmethod =
+            JavaMethodDeclaration.method("getdefault")
+                    .modifiers(Modifier.PUBLIC)
+                    .returning("String")
+                    .parameters(new Parameter(AppConstant.STRING_TYPE, "name"))
+                    .body(new JavaReturnStatement(new JavaMethodInvocation("name", "trim")));
     restController.addMethodDeclaration(getApiMethod);
+    restController.addMethodDeclaration(getdefaultmethod);
   }
 }
