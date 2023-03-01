@@ -112,28 +112,6 @@ const [openm,setopenm]=useState(true);
 
   return (
     <>
-    <Modal show={openm}>
-                  <Modal.Header closeButton onclick={changestatusmodal}>
-                  <h1 className='left'>Spring Initializr</h1>
-                          <h2 className='right'>Zeta</h2>
-                  </Modal.Header>
-
-                  <Modal.Body >
-              <pre>
-                   1.  Generate to Generate
-                   2.  Explore to see Project structure
-                   3.  Share to share others your configs
-                   4.  Add dependencies to add Zeta dependencies
-              </pre>
-                  </Modal.Body>
-                  <Modal.Footer >
-
-        <br/>
-        <button   className='btn btn-success' onClick={changestatusmodal}>Got it!!!</button>
-
-                  </Modal.Footer>
-
-              </Modal>
 
 
 

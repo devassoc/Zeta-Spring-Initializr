@@ -235,6 +235,12 @@ initializr:
           groupId: io.github.resilience4j
           artifactId: resilience4j-spring-boot2
           version: 1.6.1
+    - name: Log-Stream
+      content:
+        - name: Kinesis-Stream
+          groupId: software.amazon.awssdk
+          artifactId: kinesis
+          version: 2.19.2
     - name: Developer Tools
       content:
         - name: Spring Native [Experimental]

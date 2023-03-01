@@ -36,8 +36,8 @@ management.metrics.distribution.percentiles.http.server.requests=0.5,0.95,0.99,0
 
 
 otel.exporter.otlp.endpoint=http://localhost:4317
-otel.resource.attributes=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
-service.name=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
+#otel.resource.attributes=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
+#service.name=javaApp java -javaagent:/path/opentelemetry-javaagent.jar -jar target/*.jar
 
 #zoneconfig
 zoneName.list = aws-hdfc-beta-mumbai, aws-default-pp-mumbai , aws-default-prod-mumbai, aws-default-staging-mumbai
