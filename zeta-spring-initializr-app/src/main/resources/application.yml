@@ -1,6 +1,14 @@
 server:
   port: 8094
 
+okta:
+  oauth2:
+    clientId: 0oa8lgcoavQzDPvkQ5d7
+    clientSecret: fVAHjWMm8-m2v7R1s-TlVLvqgEfRJgfDqaJCL0rs
+    issuer: zeta.tech/oauth2/default
+
+
+
 management:
   security:
     - enabled: true
@@ -1645,8 +1653,13 @@ initializr:
       id: kotlin
       default: false
     - name: Groovy
-      id: grrovy
+      id: groovy
       default: false
+  zones:
+    - name: aws-hdfc-beta-mumbai
+      id: aws-hdfc
+      default: false
+
 
   build:
     -plugins:

@@ -14,6 +14,32 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <description>Showcase various ways to customize Spring Initializr</description>
+  <profiles>
+  <profile>
+    <id>cloud-gcp</id>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-gcp-starter</artifactId>
+        <version>1.0.0.RELEASE</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-gcp-starter-sql-mysql</artifactId>
+        <version>1.0.0.RELEASE</version>
+      </dependency>
+    </dependencies>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>com.google.cloud.tools</groupId>
+          <artifactId>appengine-maven-plugin</artifactId>
+          <version>2.4.4</version>
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
+  </profiles>
 
   <modules>
     <module>zeta-spring-initializr-app</module>
@@ -128,6 +154,8 @@
     </dependencies>
   </dependencyManagement>
 
+
+
   <build>
     <finalName>zeta-spring-intitializr</finalName>
     <plugins>
@@ -139,6 +167,16 @@
         <configuration>
           <skip>true</skip>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>appengine-maven-plugin</artifactId>
+        <version>2.4.4</version>
+        <configuration>
+          <deploy.projectId>zeta-spring-initializr-379811</deploy.projectId>
+          <deploy.version>20230306t194017</deploy.version>
+        </configuration>
+
       </plugin>
 
     </plugins>

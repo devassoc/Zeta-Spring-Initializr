@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "zeta-spring-initializr-ui/public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

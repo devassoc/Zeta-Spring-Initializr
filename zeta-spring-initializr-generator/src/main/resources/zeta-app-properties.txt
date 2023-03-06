@@ -12,6 +12,10 @@ debug=true
 trace=true
 warn=true
 
+zone.name="aws-<hdfc/default>-<pp/prod/default/beta>-mumbai"
+tenant.name="1000057"
+cluster.name="hera"
+
 spring.output.ansi.enabled=always
 
 # Default DB Related Properties

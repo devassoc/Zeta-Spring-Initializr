@@ -77,7 +77,15 @@ public class ControllerContributor<
     restController.annotate(requestMappingAnnotation);
 
   //  Annotation val1=Annotation.name(AppConstant.SPRING_VALUE,(builder)->builder.attribute(AppConstant.zone_list, List.class));
-
+    Annotation valf1=Annotation.name(AppConstant.SPRING_VALUE,(builder -> builder.attribute("zone.name",String.class)));
+    Annotation valf2=Annotation.name(AppConstant.SPRING_VALUE,(builder -> builder.attribute("tenant.name",String.class)));
+    Annotation valf3=Annotation.name(AppConstant.SPRING_VALUE,(builder -> builder.attribute("cluster.name",String.class)));
+    JavaFieldDeclaration jf1= JavaFieldDeclaration.field("zone.name").returning("String");
+    JavaFieldDeclaration jf2= JavaFieldDeclaration.field("tenant.name").returning("String");
+    JavaFieldDeclaration jf3= JavaFieldDeclaration.field("cluster.name").returning("String");
+    jf1.annotate(valf1);
+    jf2.annotate(valf2);
+    jf3.annotate(valf3);
     Annotation val1=Annotation.name(AppConstant.SPRING_VALUE,(builder)->builder.attribute(AppConstant.zone_list, List.class));
     Annotation val2=Annotation.name(AppConstant.SPRING_VALUE,(builder)->builder.attribute(AppConstant.jenkins_list, List.class));
     Annotation val3=Annotation.name(AppConstant.SPRING_VALUE,(builder)->builder.attribute(AppConstant.bitbucketid, List.class));
@@ -143,6 +151,9 @@ public class ControllerContributor<
     restController.addFieldDeclaration(f17);
     restController.addFieldDeclaration(f18);
     restController.addFieldDeclaration(f19);
+    restController.addFieldDeclaration(jf1);
+    restController.addFieldDeclaration(jf2);
+    restController.addFieldDeclaration(jf3);
     restController.addFieldDeclaration(f10);
     restController.addFieldDeclaration(hm);
     restController.addFieldDeclaration(hm1);
