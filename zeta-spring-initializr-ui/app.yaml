@@ -1,0 +1,8 @@
+runtime: nodejs18
+handlers:
+  - url: /(.*\..+)$
+    static_files: static/\1
+    upload: static/(.*\..+)$
+  - url: /.*
+    static_files: static/index.html
+    upload: static/index.html

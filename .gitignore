@@ -1,6 +1,10 @@
 HELP.md
 target/
-
+.firebase
+.firebasesrc
+.gcloudignore
+firebase.json
+spring-cloud-bootstrap.properties
 /zeta-spring-initializr-ui/target/
 /zeta-spring-initializr-ui/analysis/
 /zeta-spring-initializr-ui/.env

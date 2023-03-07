@@ -173,8 +173,8 @@
         <artifactId>appengine-maven-plugin</artifactId>
         <version>2.4.4</version>
         <configuration>
-          <deploy.projectId>zeta-spring-initializr-379811</deploy.projectId>
-          <deploy.version>20230306t194017</deploy.version>
+          <deploy.projectId>zeta-pay</deploy.projectId>
+          <deploy.version>20221013t232507</deploy.version>
         </configuration>
 
       </plugin>

@@ -1,11 +1,6 @@
 server:
   port: 8094
 
-okta:
-  oauth2:
-    clientId: 0oa8lgcoavQzDPvkQ5d7
-    clientSecret: fVAHjWMm8-m2v7R1s-TlVLvqgEfRJgfDqaJCL0rs
-    issuer: zeta.tech/oauth2/default
 
 
 
