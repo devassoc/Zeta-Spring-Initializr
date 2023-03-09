@@ -151,6 +151,13 @@
         <type>test-jar</type>
       </dependency>
 
+      <dependency>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.34.0</version>
+      </dependency>
+
+
     </dependencies>
   </dependencyManagement>
 
@@ -159,6 +166,8 @@
   <build>
     <finalName>zeta-spring-intitializr</finalName>
     <plugins>
+
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-deploy-plugin</artifactId>
@@ -166,6 +175,7 @@
         <inherited>false</inherited>
         <configuration>
           <skip>true</skip>
+
         </configuration>
       </plugin>
       <plugin>
@@ -175,9 +185,11 @@
         <configuration>
           <deploy.projectId>zeta-pay</deploy.projectId>
           <deploy.version>20221013t232507</deploy.version>
+
         </configuration>
 
       </plugin>
+
 
     </plugins>
   </build>

@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
 @EnableCaching
-@CrossOrigin(origins = "https://zeta-pay.uc.r.appspot.com/")
 public class ZetaSpringInitializrApp {
 
   

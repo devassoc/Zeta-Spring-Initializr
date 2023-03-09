@@ -1,3 +1,3 @@
-runtime: java17
-instance_class: F2
-entrypoint: java -Xmx64m -jar /Users/preetisharma/Desktop/zeta-spring-initializr/zeta-spring-initializr-ui/target/zeta-spring-intitializr.jar
+runtime: java
+env: flex
+entrypoint: java -Xmx64m -jar zeta-spring-initializr-app/zeta-spring-intitializr.jar

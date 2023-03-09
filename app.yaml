@@ -1,3 +1,5 @@
-runtime: java
-env: flex
+runtime: java17
+instance_class: F2
 entrypoint: java -Xmx64m -jar zeta-spring-initializr-app/zeta-spring-intitializr.jar
+env_variables:
+   SPRING_PROFILES_ACTIVE: "prod"
